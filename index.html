@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Esqueleto</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Login Page -->
+    <div id="login-page" class="centered">
+      <form id="login-form">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="username" placeholder="Usuario" required />
+        <input type="password" id="password" placeholder="Contraseña" required />
+        <button type="submit">Iniciar</button>
+      </form>
+    </div>
+    <!-- Project Selection Page -->
+    <div id="project-page" class="hidden centered">
+      <h2>Selecciona un proyecto</h2>
+      <div class="project-list">
+        <button class="project-btn" data-project="salud">Servicio Aragonés de Salud y Carrera</button>
+        <button class="project-btn" data-project="funcion">General de Función Pública e IAAP</button>
+        <button class="project-btn" data-project="justicia">General de Justicia</button>
+      </div>
+    </div>
+    <!-- Main App Pages (hidden by default) -->
+    <div id="main-app" class="hidden">
+      <!-- Sidebar -->
+      <aside id="sidebar">
+        <div class="sidebar-logo">
+          <img src="img/logo.png" alt="Logo" />
+        </div>
+        <nav>
+          <ul>
+            <li data-section="chat" class="active">Chat Agente IA</li>
+            <li data-section="validacion">Validación de documento</li>
+            <li data-section="meritos">Calculadora de méritos</li>
+            <li data-section="backoffice">Backoffice</li>
+          </ul>
+        </nav>
+      </aside>
+      <!-- Main Content -->
+      <section id="content">
+        <div class="main-title">AGENTE IA AREA SALUD DEL GOBIERNO DE ARAGON</div>
+        <!-- Secciones dinámicas -->
+        <div id="section-chat" class="section">
+          <h2>Chat Agente IA</h2>
+          <div class="chat-container">
+            <div class="chat-messages">
+              <div class="message bot">¡Hola! ¿En qué puedo ayudarte?</div>
+            </div>
+            <div class="chat-input">
+              <input type="text" placeholder="Escribe tu mensaje..." disabled />
+              <button disabled>Enviar</button>
+            </div>
+          </div>
+        </div>
+        <div id="section-validacion" class="section hidden">
+          <h2>Validación de documento</h2>
+          <div class="dropzone">Arrastra y suelta tus documentos aquí</div>
+          <ul class="doc-list"></ul>
+        </div>
+        <div id="section-meritos" class="section hidden">
+          <h2>Calculadora de méritos</h2>
+          <div class="meritos-list">
+            <div class="merito-card" draggable="true">Ponencia</div>
+            <div class="merito-card" draggable="true">Publicación en revista</div>
+            <div class="merito-card" draggable="true">Titulos oficiales</div>
+            <div class="merito-card" draggable="true">Premios</div>
+            <div class="merito-card" draggable="true">Voluntariado</div>
+          </div>
+        </div>
+        <div id="section-backoffice" class="section hidden">
+          <h2>Backoffice</h2>
+          <form class="backoffice-form">
+            <div class="backoffice-input">
+              <label>Promt AREA DE SALUD</label>
+              <textarea>Eres un asistente experto en validación de documentos oficiales del Gobierno de Aragón. Tu tarea es verificar autenticidad, formato y vigencia de documentos como certificados, resoluciones o notificaciones. Utiliza criterios técnicos rigurosos y lenguaje formal. Prioriza la precisión, la trazabilidad y la claridad en cada validación. Responde como si fueras parte de una entidad administrativa oficial y confiable.              </textarea>
+            </div>
+            <div class="backoffice-input">
+              <label>Pronmt Justicia</label>
+              <textarea>Eres un asistente experto en validación de documentos oficiales del Gobierno de Aragón. Tu tarea es verificar autenticidad, formato y vigencia de documentos como certificados, resoluciones o notificaciones. Utiliza criterios técnicos rigurosos y lenguaje formal. Prioriza la precisión, la trazabilidad y la claridad en cada validación. Responde como si fueras parte de una entidad administrativa oficial y confiable.              </textarea>
+            </div>
+            <div class="backoffice-input">
+              <label>Promt General de Función Pública e IAAP</label>
+              <textarea>Eres un asistente experto en validación de documentos oficiales del Gobierno de Aragón. Tu tarea es verificar autenticidad, formato y vigencia de documentos como certificados, resoluciones o notificaciones. Utiliza criterios técnicos rigurosos y lenguaje formal. Prioriza la precisión, la trazabilidad y la claridad en cada validación. Responde como si fueras parte de una entidad administrativa oficial y confiable.              </textarea>
+            </div>
+            <div class="backoffice-input">
+              <label>Normativa Española</label>
+              <textarea>Normativa española de validación de documentos oficiales del Gobierno de Aragón. </textarea>
+            </div>
+
+            <button type="button">Guardar</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html> 
