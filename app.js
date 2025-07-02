@@ -102,4 +102,23 @@ if (dropzone) {
     fakeDoc.innerHTML = '<span class="doc-icon">✔️</span> Documento validado';
     docList.appendChild(fakeDoc);
   });
-} 
+}
+
+// Administración: tabs visuales
+const adminTabs = document.querySelectorAll('.admin-tab');
+const adminPanels = {
+  usuarios: document.getElementById('admin-usuarios'),
+  documentos: document.getElementById('admin-documentos'),
+  prompts: document.getElementById('admin-prompts'),
+  plantillas: document.getElementById('admin-plantillas'),
+};
+adminTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    adminTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    Object.keys(adminPanels).forEach(key => {
+      adminPanels[key].classList.add('hidden');
+    });
+    adminPanels[tab.dataset.tab].classList.remove('hidden');
+  });
+}); 

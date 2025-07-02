@@ -39,6 +39,7 @@
             <li data-section="validacion">Validación de documento</li>
             <li data-section="meritos">Calculadora de méritos</li>
             <li data-section="backoffice">Backoffice</li>
+            <li data-section="admin">Administración</li>
           </ul>
         </nav>
       </aside>
@@ -95,6 +96,85 @@
 
             <button type="button">Guardar</button>
           </form>
+        </div>
+        <div id="section-admin" class="section hidden">
+          <h2>Administración</h2>
+          <div class="admin-tabs">
+            <button class="admin-tab active" data-tab="usuarios">Gestión de usuarios</button>
+            <button class="admin-tab" data-tab="documentos">Configuración de documentos</button>
+            <button class="admin-tab" data-tab="prompts">Parametrización de prompts</button>
+            <button class="admin-tab" data-tab="plantillas">Gestión de plantillas</button>
+          </div>
+          <div class="admin-content">
+            <!-- Gestión de usuarios -->
+            <div class="admin-panel" id="admin-usuarios">
+              <h3>Gestión de usuarios y control de accesos</h3>
+              <button class="admin-add-btn">Añadir usuario</button>
+              <table class="admin-table">
+                <thead>
+                  <tr><th>Usuario</th><th>Rol</th><th>Acciones</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>juan.perez</td><td>Administrador</td><td><button>Editar</button> <button>Eliminar</button></td></tr>
+                  <tr><td>ana.garcia</td><td>Validador</td><td><button>Editar</button> <button>Eliminar</button></td></tr>
+                </tbody>
+              </table>
+              <div class="admin-logs">
+                <h4>Registro de accesos y acciones</h4>
+                <ul>
+                  <li>juan.perez inició sesión (10:23)</li>
+                  <li>ana.garcia validó un documento (10:25)</li>
+                </ul>
+              </div>
+            </div>
+            <!-- Configuración de documentos -->
+            <div class="admin-panel hidden" id="admin-documentos">
+              <h3>Configuración de documentos y procedimientos</h3>
+              <button class="admin-add-btn">Añadir procedimiento</button>
+              <table class="admin-table">
+                <thead>
+                  <tr><th>Procedimiento</th><th>Descripción</th><th>Servicios documentales</th><th>Acciones</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Certificado de servicios</td><td>Certifica años trabajados</td><td>Archivo Central</td><td><button>Editar</button></td></tr>
+                  <tr><td>Resolución</td><td>Resolución administrativa</td><td>Archivo Digital</td><td><button>Editar</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Parametrización de prompts -->
+            <div class="admin-panel hidden" id="admin-prompts">
+              <h3>Parametrización de prompts y niveles de confianza</h3>
+              <div class="admin-prompts-list">
+                <div class="admin-prompt-item">
+                  <label>Prompt para certificados:</label>
+                  <input type="text" value="Extrae nombre, fecha y validez del certificado." />
+                </div>
+                <div class="admin-prompt-item">
+                  <label>Prompt para resoluciones:</label>
+                  <input type="text" value="Identifica el órgano emisor y la fecha de resolución." />
+                </div>
+                <div class="admin-prompt-item">
+                  <label>Nivel de confianza mínimo admitido:</label>
+                  <input type="number" min="0" max="100" value="85" />
+                </div>
+                <button class="admin-save-btn">Guardar cambios</button>
+              </div>
+            </div>
+            <!-- Gestión de plantillas -->
+            <div class="admin-panel hidden" id="admin-plantillas">
+              <h3>Gestión de plantillas documentales</h3>
+              <button class="admin-add-btn">Subir plantilla</button>
+              <table class="admin-table">
+                <thead>
+                  <tr><th>Tipo de documento</th><th>Nombre plantilla</th><th>Última modificación</th><th>Acciones</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Certificado</td><td>certificado_base.docx</td><td>2024-06-01</td><td><button>Editar</button></td></tr>
+                  <tr><td>Resolución</td><td>resolucion_modelo.docx</td><td>2024-05-28</td><td><button>Editar</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </section>
     </div>
